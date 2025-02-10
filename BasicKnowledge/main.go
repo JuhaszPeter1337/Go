@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func forLoop(){
+func forLoop() {
 	// var sum = 0
 	sum := 0
 	for i := 0; i < 10; i++ {
@@ -11,7 +11,7 @@ func forLoop(){
 	fmt.Println(sum)
 }
 
-func whileLoop(){
+func whileLoop() {
 	sum := 0
 	// If you skip the init and post statements, you get a while loop.
 	for sum < 5 {
@@ -20,7 +20,7 @@ func whileLoop(){
 	fmt.Println(sum)
 }
 
-func infiniteLoop(){
+func infiniteLoop() {
 	sum := 0
 	// If you skip the condition as well, you get an infinite loop.
 	for {
@@ -29,11 +29,11 @@ func infiniteLoop(){
 	}
 }
 
-func forEachRangeLoop(){
-	strings := [] string {"hello", "world", "!"}
+func forEachRangeLoop() {
+	strings := []string{"hello", "world", "!"}
 	length := len(strings)
 	for i, s := range strings {
-		if i < length - 1 {
+		if i < length-1 {
 			fmt.Printf("%d. %s ", i, s)
 			// fmt.Print(i, ". ", s, " ")
 		} else {
@@ -43,8 +43,8 @@ func forEachRangeLoop(){
 	}
 }
 
-func forEachRangeLoop2(){
-	strings := [] string {
+func forEachRangeLoop2() {
+	strings := []string{
 		"hello",
 		"world",
 		"!",
@@ -54,21 +54,27 @@ func forEachRangeLoop2(){
 	}
 }
 
-func main(){
+func printTasks(taskItems []string) {
+	for _, s := range taskItems {
+		fmt.Println(s)
+	}
+}
+
+func main() {
 	var taskOne = "1. Watch Go crash course"
 	var taskTwo = "2. Learn about Go language"
 	var taskThree = "3. Go to the store"
 
 	var testNumber = 5
 
-	var taskItems = [] string {
-		"1. Watch Go crash course", 
+	var taskItems = []string{
+		"1. Watch Go crash course",
 		"2. Learn about Go language",
 	}
 
-	var taskItems2 = [] string {taskOne, taskTwo}
+	var taskItems2 = []string{taskOne, taskTwo}
 
-	var taskItems3 = [2] string {
+	var taskItems3 = [2]string{
 		taskOne, taskThree,
 	}
 
@@ -84,4 +90,5 @@ func main(){
 	whileLoop()
 	forEachRangeLoop()
 	forEachRangeLoop2()
+	printTasks(taskItems)
 }
