@@ -35,6 +35,7 @@ func todoList(writer http.ResponseWriter, request *http.Request) {
 	}
 
 	// Read JSON body
+	// io.ReadAll(request.Body) reads the entire request body (which contains JSON data).
 	body, err := io.ReadAll(request.Body)
 	if err != nil {
 		http.Error(writer, "Failed to read request body", http.StatusBadRequest)
@@ -43,6 +44,7 @@ func todoList(writer http.ResponseWriter, request *http.Request) {
 
 	// Parse JSON
 	todo := TodoItem{}
+	// json.Unmarshal(body, &todo) → Converts the JSON data into a Go struct (TodoItem).
 	err = json.Unmarshal(body, &todo)
 	if err != nil {
 		http.Error(writer, "Invalid JSON format", http.StatusBadRequest)
