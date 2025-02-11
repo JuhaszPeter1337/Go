@@ -8,9 +8,9 @@ import (
 )
 
 type TodoItem struct {
-	Title       string `json:"title"`
-	Description string `json:"description"`
-	Done        bool   `json:"done"`
+	Title       string
+	Description string
+	Done        bool
 }
 
 func helloUser(writer http.ResponseWriter, request *http.Request) {
@@ -51,7 +51,7 @@ func todoList(writer http.ResponseWriter, request *http.Request) {
 
 	// Print received data
 	fmt.Println("Received data:")
-	fmt.Printf("Title: %s Description: %s, Done: %t\n", todo.Title, todo.Description, todo.Done)
+	fmt.Printf("Title: \"%s\", Description: \"%s\", Done: %t\n", todo.Title, todo.Description, todo.Done)
 
 	// Respond with a success message
 	writer.Header().Set("Content-Type", "application/json")
