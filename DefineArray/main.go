@@ -9,7 +9,7 @@ func main() {
 		fmt.Println(integers[i])
 	}
 
-	strings := []string{"Hello", "World", "!"}
+	strings := [3]string{"Hello", "World", "!"}
 
 	for i, s := range strings {
 		fmt.Printf("%d: %s\n", i, s)
